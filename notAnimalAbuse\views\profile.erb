@@ -1,0 +1,15 @@
+<h1>Welcome to The Pokefan Wiki</h1>
+<a href="/rec" >Recommend Something"</a>
+<div>
+  <% @items.all do |x| %>
+  <a href = <%=x[:link]%>><%=x[:title]%></a>
+  <p><%=x[:creator]%></p>
+  <p><%=x[:class]%></p>
+  <p><%=x[:descrip]%></p>
+     <% end %>
+  <form action="rating.erb" method="get" >
+     <button type="button" onclick=":like + 1" >Like</button>
+  </form>
+<% :like = 0 %>
+<p><%=:like%>likes</p>
+</div>
